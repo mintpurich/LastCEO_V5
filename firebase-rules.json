@@ -1,0 +1,15 @@
+{
+  "rules": {
+    "rooms": {
+      "$room": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+        "players": {
+          "$uid": {
+            ".validate": "newData.hasChildren(['name','team','host','joinedAt'])"
+          }
+        }
+      }
+    }
+  }
+}
